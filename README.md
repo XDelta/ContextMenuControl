@@ -5,7 +5,7 @@ A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoade
 Current Features (All configurable)
 * Hide the scale button entirely
 * Hide the locomotion button entirely
-* Disable the reset scale option, instead only the toggle is shown
+* Disable the reset scale option, instead only the toggle is shown [#4330](https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4330)
 * Allows hiding the whole context menu, including the root menu
 
 ## Installation
