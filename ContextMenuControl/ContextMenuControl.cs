@@ -35,7 +35,7 @@ public class ContextMenuControl : ResoniteMod {
 	[HarmonyPatch(typeof(UserRoot), "IsAtScale")]
 	private class UserRootIsAtScalePatch {
 		public static bool Prefix(UserRoot __instance, ref bool __result) {
-			if (Config.GetValue(disableScaleReset)) {
+			if (disableScaleReset.Value) {
 				__result = true;
 				return false;
 			}
@@ -47,7 +47,7 @@ public class ContextMenuControl : ResoniteMod {
 	[HarmonyPatch(typeof(InteractionHandler), "CanScale", MethodType.Getter)]
 	private class InteractionHandlerCanScalePatch {
 		public static bool Prefix(InteractionHandler __instance, ref bool __result) {
-			if (Config.GetValue(hideScaleButtonEntirely)) {
+			if (hideScaleButtonEntirely.Value) {
 				__result = false;
 				return false;
 			}
@@ -59,7 +59,7 @@ public class ContextMenuControl : ResoniteMod {
 	[HarmonyPatch(typeof(LocomotionController), "CanUseAnyLocomotion")]
 	private class LocomotionControllerCanUseAnyLocomotionPatch {
 		public static bool Prefix(LocomotionController __instance, ref bool __result) {
-			if (Config.GetValue(hideLocomotionButtonEntirely)) {
+			if (hideLocomotionButtonEntirely.Value) {
 				__result = false;
 				return false;
 			}
@@ -71,7 +71,7 @@ public class ContextMenuControl : ResoniteMod {
 	[HarmonyPatch(typeof(ContextMenu), "OpenMenu", new[] { typeof(IWorldElement), typeof(Slot), typeof(ContextMenuOptions) })]
 	private class ContextMenuOpenMenuPatch {
 		public static void Prefix(ref ContextMenuOptions options) {
-			if (Config.GetValue(hiddenContextMenu)) {
+			if (hiddenContextMenu.Value) {
 				options.hidden = true; //force the hidden option to be true.
 			}
 		}
