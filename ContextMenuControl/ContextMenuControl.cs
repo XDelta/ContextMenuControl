@@ -1,11 +1,14 @@
 using FrooxEngine;
+
 using HarmonyLib;
+
 using ResoniteModLoader;
+
 
 namespace ContextMenuControl;
 
 public class ContextMenuControl : ResoniteMod {
-	internal const string VERSION_CONSTANT = "1.0.0";
+	internal const string VERSION_CONSTANT = "1.0.1";
 	public override string Name => "ContextMenuControl";
 	public override string Author => "Delta";
 	public override string Version => VERSION_CONSTANT;
